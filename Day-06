@@ -1,4 +1,4 @@
-// ///////////Write a “person” class to hold all the details.
+Write a “person” class to hold all the details.
 
 class person {
       constructor() {
@@ -51,7 +51,7 @@ class person {
     arman.calculate();
     arman.print();
 
-//////////write a class to calculate uber price.
+Write a class to calculate uber price.
 
 // Rules as functions
 class uberprice {
