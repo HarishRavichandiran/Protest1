@@ -1,0 +1,116 @@
+// ///////////Write a “person” class to hold all the details.
+
+class person {
+      constructor() {
+        this.array = this.getMarks();
+      }
+      getMarks() {
+        let array1 = [];
+        array1.push(Number(prompt("enter marks for english out of 100")));
+        array1.push(Number(prompt("enter marks for hindi out of 100")));
+        array1.push(Number(prompt("enter marks for marathi out of 100")));
+        array1.push(Number(prompt("enter marks for maths out of 100")));
+        array1.push(Number(prompt("enter marks for science out of 100")));
+        return array1;
+      }
+      calculate() {
+        this.total = this.getTotal();
+        this.avg = this.getAvg();
+        this.grade = this.getGrade();
+      }
+      getTotal() {
+        let sum = 0;
+        this.array.forEach((element) => {
+          sum += element;
+        });
+        return sum;
+      }
+      getAvg() {
+        return this.total / this.array.length;
+      }
+      getGrade() {
+        if (this.avg >= 90) {
+          return "A";
+        } else if (this.avg >= 80) {
+          return "B";
+        } else if (this.avg >= 70) {
+          return "C";
+        } else {
+          return "D";
+        }
+      }
+    
+      print() {
+        console.log("Total = " + this.total);
+        console.log("Average = " + this.avg);
+        console.log("Grade = " + this.grade);
+      }
+    }
+    
+    let arman = new person();
+    arman.calculate();
+    arman.print();
+
+//////////write a class to calculate uber price.
+
+// Rules as functions
+class uberprice {
+  constructor() {
+    this.dis = this.getcalc_before100();
+  }
+
+  calculate() {
+    this.calc_before100 = this.getcalc_before100();
+    this.calc_btw100and500 = this.getcalc_btw100and500();
+    this.calc_after500 = this.getcalc_after500();
+    this.taxi_price = this.gettaxi_price();
+  }
+
+  getcalc_before100() {
+    let dis = 150;
+    return dis * 100;
+  }
+
+  getcalc_btw100and500() {
+    let first_100 = calc_before100(100);
+    rest = dis - 100;
+    rest_price = rest * 50;
+    total = first_100 + rest_price;
+    return total;
+  }
+
+  getcalc_after500() {
+    let first_500 = calc_btw100and500(500);
+    rest = dis - 500;
+    rest_price = rest * 10;
+    total = first_500 + rest_price;
+    return total;
+  }
+
+  // Main function
+  gettaxi_price() {
+    let price;
+
+    if (dis <= 100) {
+      price = calc_before100(dis);
+    }
+    if (dis > 100 && dis <= 500) {
+      price = calc_btw100and500(dis);
+    }
+    if (dis > 500) {
+      price = calc_after500(dis);
+    }
+    return price;
+  }
+
+  print() {
+    console.log("Total = " + this.gettaxi_price);
+  }
+}
+
+// The distance unit is meter
+let uber = new uberprice(150);
+uber.calc
+ulate();
+uber.print();
+Footer
